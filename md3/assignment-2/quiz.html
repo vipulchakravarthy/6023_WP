@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel = "stylesheet" href = "F:\WP\md3\assignment-2\style.css">
+        <style>
+                .bordered {
+                  padding: 20px;
+                  height: 100%;
+                  border: 5px inset yellowgreen;
+                  /* background-color: antiquewhite; */
+                }
+        </style>
+    </head>
+    <body>
+        <div class = "jumbotron">
+            <h1>Take A Quiz</h1>
+        </div>
+        <div class="bordered">
+            <div class = "container">
+                <div class = "row">
+                    <p>Is JavaScript a object-oriented programming? </p>
+                    <button type="button" class="btn-warning" onclick= "alert(javascripts has objects)">hint</button> 
+                    <div class = "question alert alert-warning alert-dismissable">
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            <p> JavaScript is based on objects</p>
+                    </div>
+                    <div class = "row" style = "padding-left: 25px">
+                        <input type = "radio" name = "answer" value = "Yes"> Yes<br>
+                    </div>
+                    <div class = "row" style = "padding-left: 25px">
+                        <input type = "radio" name = "answer" value = "No"> No<br>
+                    </div>
+                    <div class = "question alert alert-success alert-dismissable">
+                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                        The answer is yes, Javascript is a object-oriented programming language
+                    </div>
+                    <div class = "question alert alert-danger alert-dismissable">
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            <p>JavaScript is based on objects. so, No is wrong answer</p>
+                    </div>
+                    
+                </div>
+                <br>
+                <br>
+                <div class = "row">
+                    <p> Is Java a pure object oriented programming?</p>
+                    <button type="button" class="btn-warning" onclick= "alert(java has objects)">hint</button> 
+                    <div class = "question alert alert-warning alert-dismissable">
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            <p> Java is not a pure object-oriented programming language</p>
+                    </div>
+                    <div class = "row" style = "padding-left: 25px">
+                        <input type = "radio" name = "answer" value = "Yes"> Yes<br>
+                    </div>
+                    <div class = "row" style = "padding-left: 25px">
+                        <input type = "radio" name = "answer" value = "No"> No<br>
+                    </div>
+                    <div class = "question alert alert-danger alert-dismissable">
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            <p> Java is not a pure object-oriented programming language</p>
+                    </div>
+                    <div class = "question alert alert-success alert-dismissable">
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                           No is correct answer. Because java has primitive data types.
+                    </div>
+
+                    
+                </div>
+                <br>
+                <br>
+                <div class = "row">
+                        <p>Can we use a HTML file in CSS file?</p>
+                        <button type="button" class="btn-warning" onclick= "alert()">hint</button>
+                        <div class = "question alert alert-warning alert-dismissable">
+                                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                                <p> CSS file can be used in HTML file with link tag</p>
+                        </div> 
+                        <div class = "row" style = "padding-left: 25px">
+                            <input type = "radio" name = "answer" value = "Yes"> Yes<br>
+                        </div>
+                        <div class = "row" style = "padding-left: 25px">
+                            <input type = "radio" name = "answer" value = "No"> No<br>
+                        </div>
+                        <div class = "question alert alert-danger alert-dismissable">
+                                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                                <p>You can use a css file in html but not vice-versa </p>
+                        </div>
+                        <div class = "question alert alert-success alert-dismissable">
+                                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                               No is correct answer.
+                        </div>
+                </div>
+        </div>
+    </body>
+</html>
