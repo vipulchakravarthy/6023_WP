@@ -1,0 +1,13 @@
+.a {
+    text-align: center;
+}
+
+.boxed {
+    border: 1px solid black ;
+    width: 70%;
+    background-color: whitesmoke;
+}
+
+body{
+ background-color: lightgray;    
+}

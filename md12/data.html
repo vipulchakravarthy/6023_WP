@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link  rel= "stylesheet" href = "s.css">
+        <script type = "text/javascript" src = "jscript.js"></script>
+    </head>
+    <body>
+        <div class = "container-fluid" >
+        <h1 class = "a">Post your comment</h1>
+        <hr>
+        <div>
+        <form action="" id="usrform">
+            <span style = "padding-left: 10px">Name:</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id = "nme" name="usrname">
+        <br>
+        <br>
+        Comment: &nbsp;<textarea name="comment" id = "cmt" form="usrform" style= "width: 30%" placeholder="enter your comment"></textarea>   
+        <br>
+        <br>
+        Secret Key: <input type = "text" id = "pw" name = "password">
+        <br>
+        <br>
+        <input type = "button" id = "btns" value = "post" onclick="check()">
+        <br>
+        <br>
+        <p id = "demo" style = "font-size: 25px"></p>
+        <div class = "boxed" id = "fnl" style = "visibility: hidden">
+            <p id = "box"></p>
+        </div>
+        </form>
+        </div>
+        </div>
+    </body>
+</html>
