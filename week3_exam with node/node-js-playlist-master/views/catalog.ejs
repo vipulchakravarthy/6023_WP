@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://code.jquery.com/jquery-1.12.3.min.js" integrity = "sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ=" crossorigin = "anonymous"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <link href = "/assets/styles.css" rel = "stylesheet" type = "text/css">
+        <script src="/assets/products.js"></script>         
+    </head>
+    <body>
+        <h1>Product catalog</h1>
+        <ul>
+            <% for(var i = 0; i < products.length; i++) { %>
+                <div class = "col-mod-4">
+                    <img src="/assets/<%= products[i].image %>" alt="Smiley face" height="150" width="100">
+                </div>
+                    <div class = "col-mod-8">
+                        <h2>Title:&nbsp&nbsp<%= products[i].title %></h2><br>
+                        <h4>Description:&nbsp<%= products[i].description%></h4><br>
+                        <p>Quantity:&nbsp&nbsp<%= products[i].quantity %></p>
+                        <button>Edit</button>
+                        <button name = "<%= products[i].title %>">Delete</button>
+                    </div>
+                    <hr>
+                <br>
+            <% } %>
+        </ul>
+    </body>
+</html>
