@@ -9,10 +9,20 @@ var urlencodedParser = bodyParser.urlencoded({extended: false});
 
 module.exports = function(app) {
    
-    app.get('/catalog', function(req, res){
+    app.get('/', function(req, res){
         console.log("received get");
         res.render('catalog', {products: obj.products});
     });
+
+    app.post('/:id', urlencodedParser, function(req, res){
+        var i = req.params.id;
+        obj.products[i].title = req.body.title;
+        obj.products[i].description = req.body.des;
+        obj.products[i].quantity = req.body.quant;
+        const temp2 = JSON.stringify(obj);
+        fs.writeFileSync('catalog.json',temp2);
+        return res.redirect('/');
+    })
 
     app.delete('/:item', function(req, res) {
         obj.products = obj.products.filter(function(arr){
@@ -22,6 +32,6 @@ module.exports = function(app) {
         fs.writeFileSync('catalog.json',temp);
         const temp1 = fs.readFileSync('catalog.json');
         var dat = JSON.parse(temp1);
-        res.json(dat.products);
+        res.json({products : dat.products});
     });
 }

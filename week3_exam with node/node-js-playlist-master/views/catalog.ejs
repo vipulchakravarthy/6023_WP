@@ -18,7 +18,13 @@
                         <h2>Title:&nbsp&nbsp<%= products[i].title %></h2><br>
                         <h4>Description:&nbsp<%= products[i].description%></h4><br>
                         <p>Quantity:&nbsp&nbsp<%= products[i].quantity %></p>
-                        <button>Edit</button>
+                            <form id = "product" method = "POST" action = "/<%=i  %>">
+                                <input type = "text" name = "title" placeholder="title">
+                                <input type = "text" name = "des" placeholder="Description">
+                                <input type = "text" name = "quant" placeholder="Quantity">
+                                <button type = "submit" value = "Submit">Edit</button>
+                            </form>
+                            <br>
                         <button name = "<%= products[i].title %>">Delete</button>
                     </div>
                     <hr>
