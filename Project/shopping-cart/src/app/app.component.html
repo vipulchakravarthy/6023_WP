@@ -1,0 +1,23 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <h2 style = "text-align: center">Welcome to Shoppers Hub</h2>
+  <div class="topnav">
+      <a routerLink="/home">Home</a>
+      <a  routerLink="/login">Login</a>
+      <a routerLink="/signup">Sign Up</a>
+      <a routerLink="/cart">Cart</a>
+      <input  [(ngModel)]="filterName" placeholder="Search for your product.." style="width:800px; height:40px; margin-top: 7px; margin-right:100px">
+      <a  routerLink="/home" style="float: right;" id="logutId">Logout</a>
+  </div>
+  <router-outlet></router-outlet>
+</body>
+</html>
