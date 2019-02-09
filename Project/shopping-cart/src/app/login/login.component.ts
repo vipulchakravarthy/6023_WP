@@ -8,15 +8,15 @@ import {Router} from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  ifloggedin = false;
+  ifloggedIN;
   username;
-  password;
+  password; 
   flag: boolean; 
   fl: any;
   flg: boolean;
   lFlag:boolean = false;
   temp: boolean;
-  blankInput: boolean;
+  blank: boolean;
   constructor(public data : ProductsService,
     private router: Router) { }
 
@@ -24,20 +24,23 @@ export class LoginComponent implements OnInit {
   }
 
   submit() {
-    if((this.username == "")||(this.password == "")){
-      this.blankInput = true;
-    }else {
+    if((this.username == null)||(this.password == null)){
+      this.blank = true;
+    } else{  
       this. fl = this.data.checkLogin(this.username, this.password);
       this.fl.subscribe(x => {this.flag = x;
         if(this.flag === true) {
+          this.data.ifloggedIN = true;
+          this.data.loggedUser = this.username;
           this.router.navigate(['/home']);
-          this.ifloggedin = true;
-      }else {
-          this.temp = true;
-      };
-    });
+        }else {
+            this.temp = true;
+            this.username ="";
+            this.password ="";
+        }
+      });
+    }
   }
 
-  }
 
 }

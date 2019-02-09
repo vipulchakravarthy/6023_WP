@@ -6,6 +6,11 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
   providedIn: 'root'
 })
 export class ProductsService {
+  // empty = true;
+  cartquantity = 0;
+  ifloggedIN: boolean;
+  loggedUser: string;
+  totalBill = 0;
   obj;
   prods = [];
   name;
@@ -23,6 +28,12 @@ export class ProductsService {
     return flag;
   }
 
+  getReviews(idt) {
+      var tem  = {"mid": idt};
+      console.log(tem);
+      return this.httpClient.post('http://127.0.0.1:4201/reviewsInfo', tem);
+  }
+
   checkLogin(name, pass) {
     const headers = new HttpHeaders().set('Authorization', 'my-auth-token').set('Content-Type', 'application/json');
     var temp = {"name": name, "password": pass};
@@ -32,10 +43,8 @@ export class ProductsService {
     return fla;
   }
 
-  addReview(index, rvw) {
-    var reviewObj = {"index": index, "review" : rvw}; 
-    let flag = this.httpClient.post('http://127.0.0.1:4201/review', reviewObj);
-    return flag;
-
+  addReview(ind, rvw) {
+    var reviewObj = {mobileID: ind, name: this.loggedUser, "review" : rvw}; 
+    this.httpClient.post('http://127.0.0.1:4201/review', reviewObj).subscribe();
   }
 }

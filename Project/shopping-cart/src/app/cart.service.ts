@@ -8,7 +8,7 @@ export class CartService {
   prods = [];
   cartArr = []
   cartIndex = [];
-  quantity:Array<number>= [];
+  quantity = [];
   constructor(public data : ProductsService) { 
     this.data.getData().subscribe((x)=> {this.prods = x});
   }
