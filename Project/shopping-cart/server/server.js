@@ -2,6 +2,7 @@ var express = require('express');
 var parser = require('body-parser');
 const db = require('./database');
 const tableName = "products";
+const reviewTable = "reviews";
 const path = require('path');
 var flagOne = false;
 var urlencoded = parser.urlencoded({extended:false});
@@ -37,14 +38,17 @@ app.post('/signup', jsonparser, (req, res) =>  {
 });
 
 app.post('/review', jsonparser, (req, res) =>  {
-    db.getDB().collection("reviews").insertOne(req.body, function(err, res) {
+    db.getDB().collection(reviewTable).insertOne(req.body, function(err, res) {
       if (err) throw err;
       console.log("1 document inserted");
-      flagOne = true;
     });
-    if(flagOne == true) {
-        res.send(true);
-    } 
+});
+
+app.post('/reviewsInfo', jsonparser, (req, res) =>  {
+    db.getDB().collection(reviewTable).find({mobileID: req.body.mid}).toArray((err, rws) =>{
+      if (err) throw err;
+      res.send(rws);
+    });
 });
 
 app.post('/login', jsonparser, (req, res) => {
@@ -53,13 +57,16 @@ app.post('/login', jsonparser, (req, res) => {
     console.log(req.body);
     var query = {name :req.body.name}
     db.getDB().collection("user_details").find(query).toArray(function(err, result) {
-        if(err) throw err;
-        if(result[0].password === req.body.password) {
-            console.log("hai");
-            res.send(true);
-        } else {
-            res.send(false);
+        if(err | result.length === 0) res.send(false);
+        else {
+            if(result[0].password === req.body.password) {
+                console.log("hai");
+                res.send(true);
+            } else {
+                res.send(false);
+            }
         }
+
     });
 
 });
