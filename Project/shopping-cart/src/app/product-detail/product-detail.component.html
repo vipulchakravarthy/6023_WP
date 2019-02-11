@@ -9,8 +9,8 @@
         <div class = "col-lg-6" style="float: left; margin-top:3%">
             <h4 class="card-title">{{objt[ind].name}}</h4>
             <p class="card-text">{{objt[ind].description}}</p>
-            <p id="quantity" class="card-text">{{objt[ind].quantity}}</p> 
-            <p id="price">{{objt[ind].price}}</p>
+            <p id="quantity" class="card-text">Available Qunatity: {{objt[ind].quantity}}</p> 
+            <p id="price">Price: {{objt[ind].price}}/-</p>
 
             <button class="btn" color="primary" routerLink="/home">Back</button>&nbsp;
 
@@ -34,9 +34,11 @@
                  <p class="message"><i>To add a review </i> <a routerLink="/login"> Login </a>/<a routerLink="/signup"> Sign Up</a></p>
             </div>
             <button class="btn" (click) = "getReview()">See review</button>
+            <br>
+            <br>
             <div *ngFor = "let x of reviewObj">
               <div class="alert" style="border:solid lightgray 1px">
-                  <p><Strong>{{x.review}} </Strong> &nbsp; -- {{x.name}}</p>
+                  <p><i><Strong>{{x.review}} </Strong></i> &nbsp; -- {{x.name}}</p>
               </div>
               
             </div>

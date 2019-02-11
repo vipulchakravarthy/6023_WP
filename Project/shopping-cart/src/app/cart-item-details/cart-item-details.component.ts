@@ -20,6 +20,8 @@ export class CartItemDetailsComponent implements OnInit {
     this.quantity = c.getQuantity();
     // console.log(this.index);
    }
+
+   
    remove(){
     this.data.totalBill -= this.cartObjArr[this.index].price * this.quantity[this.index];
     this.data.cartquantity -= this.quantity[this.index];
