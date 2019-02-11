@@ -37,6 +37,17 @@ app.post('/signup', jsonparser, (req, res) =>  {
     } 
 });
 
+app.put('/update', jsonparser, (req, res) => {
+    console.log(req.body);
+    // db.getDB().collection("products")
+    db.getDB().collection("products").findOneAndUpdate({name : req.body.name},
+                                                        {$set: {quantity: req.body.quant}},
+                                                        {new:true},(err, result) => {
+        if(err) throw err;
+        else console.log("updated");
+    });
+});
+
 app.post('/review', jsonparser, (req, res) =>  {
     db.getDB().collection(reviewTable).insertOne(req.body, function(err, res) {
       if (err) throw err;
